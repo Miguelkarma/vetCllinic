@@ -219,11 +219,6 @@ label.star:before {
     text-shadow: 4px 4px #000000f5;
 }
 
-.site-title {
-    font-size: 5em !important;
-    color: white !important;
-    text-shadow: 4px 5px 3px #68717a !important;
-}
 
 .site-subtitle {
     font-size: 2em !important;

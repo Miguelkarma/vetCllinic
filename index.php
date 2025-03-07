@@ -1,7 +1,22 @@
 <?php require_once('./config.php'); ?>
  <!DOCTYPE html>
 <html lang="en" class="" style="height: auto;">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
+  body{ background: #eacda3;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #d6ae7b, #eacda3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+  .hero{
+      background: linear-gradient(rgb(44, 33, 1),rgb(240, 234, 225));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3em;
+   
+  font-weight: bold;
+  text-shadow: 2px 2px  0px rgb(219, 182, 113); /* Adds shadow to text */
+  }
   #header{
     height:70vh;
     width:calc(100%);
@@ -50,11 +65,11 @@
       </script>
       <?php endif;?>    
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper pt-5" style="">
+   
         <?php if($page == "home" || $page == "about_us"): ?>
           <div id="header" class="shadow mb-4">
-              <div class="d-flex justify-content-center h-100 w-100 align-items-center flex-column px-3">
-                  <h1 class="w-100 text-center site-title px-5"><?php echo $_settings->info('name') ?></h1>
+              <div class="d-flex justify-content-center h-100% w-100 align-items-center flex-column px-3">
+                  <h1 class="hero w-100 text-center site-title px-5"><?php echo $_settings->info('name') ?></h1>
                   <!-- <h3 class="w-100 text-center px-5 site-subtitle"><?php echo $_settings->info('name') ?></h3> -->
               </div>
           </div>

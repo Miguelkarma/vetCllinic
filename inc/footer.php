@@ -1,3 +1,4 @@
+
 <script>
   $(document).ready(function(){
     $('.list-group').each(function(){
@@ -61,8 +62,8 @@
     }
   })
 </script>
-<footer class="main-footer text-sm">
-  <div class="container">
+<footer class="bg-white p-4 text-sm bottom-0">
+
         <strong>Copyright © <?php echo date('Y') ?>. 
         <!-- <a href=""></a> -->
         </strong>
@@ -70,9 +71,9 @@
         <div class="float-right d-none d-sm-inline-block">
           <b><?php echo $_settings->info('short_name') ?> (by: <a href="" target="blank">VETCLINIC-SYSTEM</a> )</b> v1.0
         </div>
-      </div>
+     
       </footer>
-    </div>
+ 
     <!-- ./wrapper -->
 <div id="libraries">
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->

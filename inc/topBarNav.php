@@ -1,104 +1,170 @@
-<style>
-  .user-img{
-        position: absolute;
-        height: 27px;
-        width: 27px;
-        object-fit: cover;
-        left: -7%;
-        top: -12%;
-  }
-  .btn-rounded{
-        border-radius: 50px;
-  }
-</style>
-<!-- Navbar -->
-      <style>
-        #login-nav {
-          position: fixed !important;
-          top: 0 !important;
-          z-index: 1037;
-          padding: 0.3em 2.5em !important;
-        }
-        #top-Nav{
-          top: 2.3em;
-        }
-        .text-sm .layout-navbar-fixed .wrapper .main-header ~ .content-wrapper, .layout-navbar-fixed .wrapper .main-header.text-sm ~ .content-wrapper {
-          margin-top: calc(3.6) !important;
-          padding-top: calc(3.2em) !important
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+    
       }
-      </style>
-      <nav class="w-100 px-2 py-1 position-fixed top-0 bg-light text-dark" id="login-nav">
-        <div class="d-flex justify-content-between w-100">
-          <div>
-            <span class="mr-2"><i class="fa fa-phone mr-1"></i> <?= $_settings->info('contact') ?></span>
-          </div>
-          <div>
-            <?php if($_settings->userdata('id') > 0): ?>
-              <span class="mx-2"><img src="<?= validate_image($_settings->userdata('avatar')) ?>" alt="User Avatar" id="student-img-avatar"></span>
-              <span class="mx-2">Hello, <?= !empty($_settings->userdata('username')) ? $_settings->userdata('username') : $_settings->userdata('email') ?></span>
-              <a href="./admin" class="btn btn-info mx-2 text-dark">Dashboard</a>
-            <?php if($_settings->userdata('login_type') == 1): ?>
-              <span class="mx-1"><a href="<?= base_url.'classes/Login.php?f=logout' ?>"><i class="fa fa-power-off"></i></a></span>
-            <?php else: ?>
-              <span class="mx-1"><a href="<?= base_url.'classes/Login.php?f=client_logout' ?>"><i class="fa fa-power-off"></i></a></span>
-            <?php endif; ?>
-            <?php else: ?>
-              <a href="./admin" class="mx-2 text-dark">Admin Login</a>
-            <?php endif; ?>
-          </div>
-        </div>
-      </nav>
-      <br>
-      <nav class="main-header navbar navbar-expand navbar-dark border-0 text-sm" id='top-Nav' style="margin-top:20px;background-color:#b5651d;" >
+        .user-img {
+            position: absolute;
+            height: 27px;
+            width: 27px;
+            object-fit: cover;
+            left: -7%;
+            top: -12%;
+        }
+        .btn-rounded {
+            border-radius: 50px;
+        }
+          .nav-link {
+            color: rgb(112, 64, 1) !important;
+
+            border-radius: 1em;
+        }
+        .navbar-nav .nav-link.active {
+            color: rgb(112, 64, 1) !important;
+            background: rgba(112, 64, 1, 0.5) !important;
+            border-radius: 1em;
+        }
+        .navbar-brand {
+            background: linear-gradient(to bottom, rgb(100, 76, 22), rgba(180, 82, 2, 0.66));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+        }
+        .box {
+            width: 40px;
+            float: left;
+            transition: .5s linear;
+            position: relative;
+            display: block;
+            overflow: hidden;
+            text-align: center;
+            background: transparent;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .box i {
+            font-size: 1.5rem;
+            color: black;
+        }
+        #login-nav {
+            position: fixed !important;
+            top: 0 !important;
+            z-index: 1037;
+            padding: 0.3em 2.5em !important;
+            background: linear-gradient(to right, #FFD194, #D1913C);
+        }
+        #top-Nav {
+   
+            background: linear-gradient(to right, #FFD194, #D1913C);
+        }
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        #login-nav .d-flex {
+  flex-wrap: nowrap !important;
+}
+.brand-image{
+  height: 50px; width: 50px
+}
+
+.bi {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Creates an outline effect */
+    font-size: 1.5rem; /* Adjust the icon size */
+    color: white; /* Set icon color */
+}
+.fa {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Creates an outline effect */
+    font-size: 1.5rem; /* Adjust the icon size */
+    color: white; /* Set icon color */
+}
+
+
+@media (max-width: 576){
+  #login-nav .d-flex {
+     flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #login-nav span,
+  #login-nav button {
+    font-size: 14px; 
+    white-space: nowrap;
+  }
+
+  #login-nav img {
+    height: 22px; 
+    width: 22px;
+  }
+   .navbar-nav{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+}
         
-        <div class="container">
-          <a href="./" class="navbar-brand">
-            <img src="<?php echo validate_image($_settings->info('logo'))?>" alt="Site Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    </style>
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="top-Nav">
+    <div class="container">
+        <a href="./" class="navbar-brand fw-bold">
+            <img src="<?= validate_image($_settings->info('logo')) ?>" alt="Site Logo" class="brand-image img-circle elevation-3" style="opacity: .8;">
             <span><?= $_settings->info('short_name') ?></span>
-          </a>
-
-          <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse order-3" id="navbarCollapse">
-            <!-- Left navbar links -->
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a href="./" class="nav-link <?= isset($page) && $page =='home' ? "active" : "" ?>">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="./?page=appointment" class="nav-link <?= isset($page) && $page =='appointment' ? "active" : "" ?>">Appointment</a>
-              </li>
-              <li class="nav-item">
-                <a href="./?page=services" class="nav-link <?= isset($page) && $page =='services' ? "active" : "" ?>">Our Services</a>
-              </li>
-              <li class="nav-item">
-                <a href="./?page=about" class="nav-link <?= isset($page) && $page =='about' ? "active" : "" ?>">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="./?page=contact_us" class="nav-link <?= isset($page) && $page =='contact_us' ? "active" : "" ?>">Contact Us</a>
-              </li>
-              <?php if($_settings->userdata('id') > 0 && $_settings->userdata('login_type' != 1)): ?>
-              <li class="nav-item">
-                <a href="./?page=profile" class="nav-link <?= isset($page) && $page =='profile' ? "active" : "" ?>">Profile</a>
-              </li>
-              <?php endif; ?>
-              <!-- <li class="nav-item">
-                <a href="#" class="nav-link">Contact</a>
-              </li> -->
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav fw-semibold mx-auto">
+                <li class="nav-item">
+                    <a href="./" class="nav-link <?= isset($page) && $page =='home' ? "active" : "" ?>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./?page=appointment" class="nav-link <?= isset($page) && $page =='appointment' ? "active" : "" ?>">Appointment</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./?page=services" class="nav-link <?= isset($page) && $page =='services' ? "active" : "" ?>">Our Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./?page=about" class="nav-link <?= isset($page) && $page =='about' ? "active" : "" ?>">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./?page=contact_us" class="nav-link <?= isset($page) && $page =='contact_us' ? "active" : "" ?>">Contact Us</a>
+                </li>
+                <?php if($_settings->userdata('id') > 0 && $_settings->userdata('login_type' != 1)): ?>
+                <li class="nav-item">
+                    <a href="./?page=profile" class="nav-link <?= isset($page) && $page =='profile' ? "active" : "" ?>">Profile</a>
+                </li>
+                <?php endif; ?>
             </ul>
 
-            
-          </div>
-          <!-- Right navbar links -->
-          <div class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
-          </div>
+            <!-- User Menu (Aligned to the Right) -->
+            <ul class="navbar-nav ms-auto d-flex align-items-start ">
+              
+    <li class="nav-item d-flex align-items-center me-3">
+        <span class="me-2 fw-semibold" style="color:#704001"><?= !empty($_settings->userdata('username')) ? $_settings->userdata('username') : $_settings->userdata('email') ?></span>
+        <img src="<?= validate_image($_settings->userdata('avatar')) ?>" alt="User Avatar" class="rounded-circle" style="height: 40px; width: 40px;">
+   
+        <a href="./admin" class="nav-link ms-2"><i class="bi bi-house-door" style="color:#000; font-size: 1.5rem;"></i></a>
+        <a href="<?= base_url.($_settings->userdata('login_type') == 1 ? 'classes/Login.php?f=logout' : 'classes/Login.php?f=client_logout') ?>" class="nav-link">
+            <i class="fa fa-power-off text-danger ms-2" style="font-size: 1.5rem;"></i>
+        </a>
+    </li>
+</ul>
+
         </div>
-      </nav>
-      <!-- /.navbar -->
-      <script>
-        $(function(){
-          
-        })
-      </script>
+    </div>
+</nav>
+
+</body>
+</html> 
