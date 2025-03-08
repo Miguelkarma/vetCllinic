@@ -1,3 +1,68 @@
+<style>
+   
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+    
+#top-Nav .container {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 15px;
+}
+
+
+#top-Nav .navbar-nav {
+  width: auto;
+}
+
+
+.user-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+#top-Nav .contact-info {
+  white-space: nowrap;
+}
+
+
+#navbarCollapse {
+  justify-content: space-between;
+}
+
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    margin-right: 1rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  #top-Nav .container {
+    padding: 0 10px;
+  }
+  
+  #navbarCollapse {
+    align-items: flex-start;
+  }
+  
+  .user-section {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+</style>
 <div class="col-12">
     <div class="row my-5 ">
         <div class="col-md-5">

@@ -35,7 +35,12 @@
     .welcome-content img{
         margin:.5em;
     }
+
+    
 </style>
+
+
+
 <div class="col-lg-12 py-5">
     <div class="contain-fluid">
         <div class="card card-outline card-warning shadow rounded-0">

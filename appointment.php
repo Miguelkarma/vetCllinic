@@ -1,10 +1,107 @@
 <style>
+  
     .fc-event-title-container{
+      background-color: #eacda3!important;
         text-align:center;
+        color:#5C4033 !important;
+       
+         
     }
     .fc-event-title.fc-sticky{
         font-size:2em;
+      
     }
+    .card-body{
+    background-color:hsl(29, 30.20%, 57.80%);
+    }
+
+.user-img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.btn-rounded {
+  border-radius: 50px;
+}
+
+
+body {
+  padding-top: 60px;
+   height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+    
+#top-Nav .container {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 15px;
+}
+
+
+#top-Nav .navbar-nav {
+  width: auto;
+}
+
+
+.user-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+#top-Nav .contact-info {
+  white-space: nowrap;
+}
+
+
+#navbarCollapse {
+  justify-content: space-between;
+}
+
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    margin-right: 1rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  #top-Nav .container {
+    padding: 0 10px;
+  }
+  
+  #navbarCollapse {
+    align-items: flex-start;
+  }
+  
+  .user-section {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+.header{
+  background-color:hsl(29, 27.00%, 52.70%)!important;
+padding:1em!important;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+
+}
+.title{
+  color:#4b2a1b; 
+}
+
 </style>
 <?php 
 $appointments = $conn->query("SELECT * FROM `appointment_list` where `status` in (0,1) and date(schedule) >= '".date("Y-m-d")."' ");
@@ -17,9 +114,9 @@ while($row = $appointments->fetch_assoc()){
 <div class="content py-5">
     <div class="row justify-content-center">
         <div class="col-md-12">
-            <div class="card card-outline card-primary rounded-0 shadow">
-                <div class="card-header rounded-0">
-                        <h4 class="card-title">Appointment Availablity</h4>
+            <div class=" rounded-0 shadow">
+                <div class="header">  
+                        <h4 class="title fs-2">Appointment Availablity</h4>
                 </div>
                 <div class="card-body">
                    <div id="appointmentCalendar"></div>
@@ -45,8 +142,7 @@ while($row = $appointments->fetch_assoc()){
                 center: 'title',
             },
             selectable: true,
-            themeSystem: 'bootstrap',
-            //Random default events
+            initialView: 'dayGridMonth',
             events: [
                 {
                     daysOfWeek: [0,1,2,3,4,5,6], // these recurrent events move separately

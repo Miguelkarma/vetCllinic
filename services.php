@@ -1,6 +1,86 @@
 <?php 
 $cid = isset($_GET['cids']) ? $_GET['cids'] : 'all';
 ?>
+<style>
+
+body {
+  height: 100vh;
+  margin: 0;
+
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; 
+}
+
+#top-Nav .container {
+  width: 100%;
+  max-width: 1320px;
+  padding: 0 15px;
+}
+
+
+#top-Nav .navbar-nav {
+  width: auto;
+}
+
+
+.user-section {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+#top-Nav .contact-info {
+  white-space: nowrap;
+}
+
+
+#navbarCollapse {
+  justify-content: space-between;
+}
+
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    margin-right: 1rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  #top-Nav .container {
+    padding: 0 10px;
+  }
+  
+  #navbarCollapse {
+    align-items: flex-start;
+  }
+  
+  .user-section {
+    width: 100%;
+    justify-content: flex-start;
+    margin-top: 10px;
+  }
+}
+
+.list-group-item{
+    background-color:hsl(29, 30.20%, 57.80%);   
+     color: color:#5C4033 !important;
+}
+.list-group-item:hover{
+    background-color:hsla(29, 21.70%, 50.40%, 0.99);   
+     color:#5C4033 !important;
+}
+.list-group-item list-group-item-action{
+    color:#5C4033 !important;
+}
+</style>
 <div class="content py-5">
     <h3 class="">Our Services</h3>
 <hr>
@@ -8,9 +88,9 @@ $cid = isset($_GET['cids']) ? $_GET['cids'] : 'all';
         <div class="row">
             <div class="col-md-4">
                 <h3>Categories</h3>
-                <div class="list-group">
-                    <div class="list-group-item list-group-item-action">
-                        <div class="custom-control custom-checkbox">
+                <div class="list-group ">
+                    <div class="list-group-item list-group-item-action ">
+                        <div class="custom-control custom-checkbox ">
                           <input class="custom-control-input" type="checkbox" id="category_all" value="all" <?= $cid =='all' ? "checked" :"" ?>>
                           <label for="category_all" class="custom-control-label">All</label>
                         </div>
@@ -19,7 +99,7 @@ $cid = isset($_GET['cids']) ? $_GET['cids'] : 'all';
                     $cat_qry = $conn->query("SELECT * FROM `category_list` where delete_flag = 0");
                     while($row = $cat_qry->fetch_assoc()):
                     ?>
-                    <div class="list-group-item list-group-item-action">
+                    <div class="list-group-item list-group-item-action  ">
                         <div class="custom-control custom-checkbox">
                             <input class="custom-control-input category-item" type="checkbox" id="category_<?= $row['id'] ?>" value="<?= $row['id'] ?>" <?= $cid=='all' || in_array($row['id'],explode(',',$cid)) ? "checked" : "" ?>>
                             <label for="category_<?= $row['id'] ?>" class="custom-control-label"><?= $row['name'] ?></label>
@@ -28,7 +108,7 @@ $cid = isset($_GET['cids']) ? $_GET['cids'] : 'all';
                     <?php endwhile; ?>
                 </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 ">
             <div class="list-group" id="service-list">
             <?php 
                 $categories = $conn->query("SELECT * FROM `category_list`");

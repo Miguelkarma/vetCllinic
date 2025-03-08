@@ -6,7 +6,9 @@
         height: 100%;
     }
     .fc-event-title-container{
+           background-color: #eacda3!important;
         text-align:center;
+        color:#5C4033 !important;
     }
     .fc-event-title.fc-sticky{
         font-size:2em;
