@@ -7,9 +7,6 @@
   border-radius: 50%;
 }
 
-.btn-rounded {
-  border-radius: 50px;
-}
 
 
 body {
@@ -23,7 +20,9 @@ body {
   z-index: 1037;
   width: 100%;
   padding: 0.5rem !important;
-  background-color: transparent;
+ background: #eacda3;
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+    background: linear-gradient(to right, #d6ae7b, #eacda3);
   backdrop-filter: blur(3em);
 }
 
@@ -142,6 +141,78 @@ body {
     font-size: 1.25rem !important;
   }
 }
+
+ 
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding:  0.5em 3em 0.5em 3em;
+  border: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10rem;
+  transition: all 0.02s;
+  font-weight: bold;
+  cursor: pointer;
+  color:rgb(29, 15, 9)!important;
+  z-index: 0;
+  box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+}
+
+.button:hover {
+  background: rgb(228, 209, 163);
+ color: #5C4033;
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+.hoverEffect {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hoverEffect div {
+  background: rgb(222, 0, 75);
+  background: linear-gradient(
+    90deg,
+    rgb(92, 77, 10) 0%,
+    rgb(235, 214, 146) 49%,
+    rgb(111, 97, 7) 100%
+  );
+  border-radius: 40rem;
+  width: 10rem;
+  height: 10rem;
+  transition: 0.4s;
+  filter: blur(20px);
+  animation: effect infinite 3s linear;
+  opacity: 0.5;
+}
+
+.button:hover .hoverEffect div {
+  width: 8rem;
+  height: 8rem;
+}
+
+@keyframes effect {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 </style>
 <!-- Main Navbar -->
 <nav id="top-Nav" class="navbar navbar-expand-xl navbar-dark shadow-sm">
@@ -185,7 +256,12 @@ body {
           
           </div>
         <?php else: ?>
-          <a href="./admin" class="btn btn-sm btn-primary">Login</a>
+          <button onClick="window.location.href='./admin'" class="button">Login
+
+          <div class="hoverEffect">
+    <div></div>
+  </div>
+          </button >
         <?php endif; ?>
       </div>
     </div>

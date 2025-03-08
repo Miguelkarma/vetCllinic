@@ -6,6 +6,7 @@
   <style>
     :root{
       --bg-img:url('<?php echo validate_image($_settings->info('cover')) ?>');
+      
     }
     
   

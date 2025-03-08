@@ -62,11 +62,19 @@ body {
     margin-top: 10px;
   }
 }
+.card{
+
+        background: #eacda3;
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+    background: linear-gradient(to right, #d6ae7b, #eacda3);
+    color:  color: #5C4033;
+  }
+}
 </style>
 <div class="col-12">
     <div class="row my-5 ">
         <div class="col-md-5">
-            <div class="card card-outline card-navy rounded-0 shadow">
+            <div class="card card-outline card-navy rounded-0 shadow ">
                 <div class="card-header">
                     <h4 class="card-title">Contact</h4>
                 </div>

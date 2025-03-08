@@ -5,32 +5,32 @@
    
    
 <style>
- 
-  body{
-  width: 100%;
-  height: 100%;
-  
-  --s: 20em; 
-  --c-half-left: hsl(29, 30.20%, 57.80%);
-  --c-half-right: hsl(40, 50%, 80%);
-  --c-bottom: hsla(41, 60.00%, 73.50%, 0.57);
+body {
+background:
+radial-gradient(hsl(34, 90%, 85%) 4%, hsl(34, 80%, 75%) 9%, hsla(34, 80%, 77%, 0) 9%) 0 0,
+radial-gradient(hsl(34, 90%, 85%) 4%, hsl(34, 80%, 75%) 8%, hsla(34, 80%, 77%, 0) 10%) 50px 50px,
+radial-gradient(hsla(34, 90%, 85%, 0.8) 20%, hsla(34, 80%, 75%, 0)) 50px 0,
+radial-gradient(hsla(34, 90%, 85%, 0.8) 20%, hsla(34, 80%, 75%, 0)) 0 50px,
+radial-gradient(hsla(34, 90%, 80%, 1) 35%, hsla(34, 80%, 75%, 0) 60%) 50px 0,
+radial-gradient(hsla(34, 90%, 80%, 1) 35%, hsla(34, 80%, 75%, 0) 60%) 100px 50px,
+radial-gradient(hsla(34, 80%, 75%, 0.7), hsla(34, 80%, 75%, 0)) 0 0,
+radial-gradient(hsla(34, 80%, 75%, 0.7), hsla(34, 80%, 75%, 0)) 50px 50px,
+linear-gradient(45deg, hsla(34, 80%, 75%, 0) 49%, hsla(34, 80%, 60%, 1) 50%, hsla(34, 80%, 75%, 0) 70%) 0 0,
+linear-gradient(-45deg, hsla(34, 80%, 75%, 0) 49%, hsla(34, 80%, 60%, 1) 50%, hsla(34, 80%, 75%, 0) 70%) 0 0;
+background-color: #5a3e2b;
+background-size: 100px 100px;
 
-  background: conic-gradient(
-    var(--c-half-left) 0deg,
-    var(--c-half-left) 120deg,
-    var(--c-bottom) 120deg,
-    var(--c-bottom) 240deg,
-    var(--c-half-right) 240deg
-  );
-  background-size: var(--s);
 }
 
-  
 
+
+  
+  
   .hero{
-      background: linear-gradient(rgb(44, 33, 1),rgb(148, 90, 2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+     background: linear-gradient(90deg, rgba(100, 71, 4, 0.87) 0%, rgba(60, 25, 3, 0.93) 40%, rgba(146, 89, 3, 0.6) 95%);
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
     font-size: 3em;
    
   font-weight: bold;
@@ -77,14 +77,149 @@
     bottom: 0;
   }
   .hback{
-    
-  background: #eacda3; 
-background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);  
-background: linear-gradient(to right, #d6ae7b, #eacda3);
-
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 1em 4em 1em rgba(0, 0, 0, 1 );
+backdrop-filter: blur(6em);
+  box-shadow: 0 0.5em 2em 1em inset rgba(0, 0, 0, 1 );
   border-radius: 4em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; 
+  width: 60%;
+  text-align: center;
+  
+}
+
+@media (max-width:606px) {
+ .hback{
+  font-size:0.7em;
+ }
+
+}
+@media (max-width:500px) {
+ .hback{
+  font-size:0.6em;
+  width: 100%;
+ }
+ 
+}
+
+.button {
+  --white: #F5F5DC; /* Beige */
+  --bg:rgba(215, 182, 138, 0.73); /* Tan */
+  --radius: 100px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  position: relative;
+  border-radius: var(--radius);
+  background-color: var(--bg);
+  transition: all 0.2s ease;
+  box-shadow:
+    inset 0 0.3rem 0.9rem rgba(255, 255, 255, 0.3),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.5),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+.button .wrap {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: rgba(75, 56, 10, 0.7);
+  padding: 0em;
+  border-radius: inherit;
+  position: relative;
+  overflow: hidden;
+  
+}
+.button .wrap p span:nth-child(2) {
+  display: none;
+}
+.button:hover .wrap p span:nth-child(1) {
+  display: none;
+}
+.button:hover .wrap p span:nth-child(2) {
+  display: inline-block;
+}
+.button .wrap p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  transition: all 0.2s ease;
+  transform: translateY(2%);
+  mask-image: linear-gradient(to bottom, white 40%, transparent);
+
+}
+.button .wrap::before,
+.button .wrap::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s ease;
+}
+.button .wrap::before {
+  left: -15%;
+  right: -15%;
+  bottom: 25%;
+  top: -100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.button .wrap::after {
+  left: 6%;
+  right: 6%;
+  top: 12%;
+  bottom: 40%;
+  border-radius: 22px 22px 0 0;
+  box-shadow: inset 0 10px 8px -10px rgba(255, 255, 255, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.button:hover {
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.4),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.7),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.7),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+.button:hover .wrap::before {
+  transform: translateY(-5%);
+}
+.button:hover .wrap::after {
+  opacity: 0.4;
+  transform: translateY(5%);
+}
+.button:hover .wrap p {
+  transform: translateY(-4%);
+}
+.button:active {
+  transform: translateY(4px);
+  box-shadow:
+    inset 0 0.3rem 0.5rem rgba(255, 255, 255, 0.5),
+    inset 0 -0.1rem 0.3rem rgba(0, 0, 0, 0.8),
+    inset 0 -0.4rem 0.9rem rgba(255, 255, 255, 0.4),
+    0 3rem 3rem rgba(0, 0, 0, 0.3),
+    0 1rem 1rem -0.6rem rgba(0, 0, 0, 0.8);
+}
+
+
+@media (max-width: 1600px) {
+  .button {
+    font-size: 1em;
+    padding: 0.3em 0.8em;
+    min-width: 100px;
+  }
+  .button .wrap {
+    font-size: 1em;
+  }
+  .button .wrap p {
+    gap: 8px;
+  }
 }
 
   }
@@ -108,10 +243,22 @@ background: linear-gradient(to right, #d6ae7b, #eacda3);
         <?php if($page == "home" || $page == "about_us"): ?>
           <div id="header" class="shadow mt-3">
               <div class="d-flex justify-content-center h-100% w-100 align-items-center flex-column ">
+                
                 <div class="hback">
-                  <h1 class="hero w-100 text-center site-title px-5"><?php echo $_settings->info('name') ?></h1>
+                  <h1 class="hero w-100 text-center site-title px-5"><?php echo $_settings->info('name') ?>
+                </h1>
+                  <button class="button" onClick="window.location.href='http://localhost/ovas/?page=appointment'">
+
+  <div class="wrap">
+    <p>
+    
+      Book an Appointment <i class="fas fa-arrow-right"></i>
+    </p>
+  </div>
+</button>
                   <!-- <h3 class="w-100 text-center px-5 site-subtitle"><?php echo $_settings->info('name') ?></h3> -->
                    </div>
+                   
               </div>
           </div>
         <?php endif; ?>

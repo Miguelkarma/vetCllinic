@@ -68,6 +68,13 @@ body {
     margin-top: 10px;
   }
 }
+.card{
+
+        background: #eacda3;
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+    background: linear-gradient(to right, #d6ae7b, #eacda3);
+    color:  color: #5C4033;
+  }
 </style>
 <div class="col-12">
     <div class="row my-5 ">

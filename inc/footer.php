@@ -1,4 +1,13 @@
-
+<style>
+.foot{
+   color: rgb(104, 64, 5) !important;
+  background: #eacda3;
+    background: -webkit-linear-gradient(to right, #d6ae7b, #eacda3);
+    background: linear-gradient(to right,rgb(235, 204, 164), #eacda3);  
+    z-index: 1037;
+    bottom:0;
+}
+</style>
 <script>
   $(document).ready(function(){
     $('.list-group').each(function(){
@@ -62,7 +71,7 @@
     }
   })
 </script>
-<footer class="bg-white p-4 text-sm bottom-0">
+<footer class="foot  p-4 text-sm bottom-0">
 
         <strong>Copyright © <?php echo date('Y') ?>. 
         <!-- <a href=""></a> -->
