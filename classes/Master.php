@@ -338,7 +338,7 @@ Class Master extends DBConnection {
 				$data .= " `{$k}`='{$v}' ";
 			}
 		}
-		$insrt = $this->conn->query("INSERT INTO `clinic_history` set {$data} ");
+		$insrt = $this->conn->query("INSERT INTO clinic_history ( owner_id, category_id, breed, age, service_ids, pet_id, notes) VALUES ('$owner_id', '$category_id', '$breed', '$age', '$service_ids', '$pet_id', '$notes') ");
 		$del = $this->conn->query("UPDATE `appointment_list` set status = '{$status}', time_sched = '$time_sched' where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
