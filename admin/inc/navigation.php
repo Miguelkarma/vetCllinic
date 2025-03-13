@@ -1,3 +1,21 @@
+<style> .main-sidebar {
+  width: 100%;
+  max-width: 250px; /* Adjust this value if needed */
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 250px;
+}
+
+.os-content {
+  width: 100% !important;
+}
 </style>
 <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-light levation-4 sidebar-no-expand" style="background-color:#b5651d">

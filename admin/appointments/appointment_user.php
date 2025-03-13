@@ -1,11 +1,11 @@
 <div class="card card-outline card-warning">
 	<div class="card-header">
-		<h3 class="card-title">List of Appoitments</h3>
+		<h3 class="card-title">List of Appointments</h3>
 	</div>
 	<div class="card-body">
 		<div class="container-fluid">
-        <div class="container-fluid">
-			<table class="table table-hover table-striped table-bordered">
+        <div class="table-responsive">
+			<table class="table table-sm table-hover table-striped table-bordered">
 				<colgroup>
 					<col width="5%">
 					<col width="20%">
