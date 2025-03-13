@@ -1,24 +1,76 @@
-<style> .main-sidebar {
-  width: 100%;
-  max-width: 250px; /* Adjust this value if needed */
+<style> 
+.main-sidebar {
+  width: 250px;
+  max-width: 250px;
   position: fixed;
   left: 0;
   top: 0;
   height: 100vh;
+  background-color: #8B4513;
   overflow-y: auto;
+  transition: width 0.3s ease-in-out;
 }
 
 .sidebar {
-  width: 100%;
+  width: 250px;
   max-width: 250px;
+  transition: width 0.3s ease-in-out;
 }
 
-.os-content {
-  width: 100% !important;
+/* Content Wrapper */
+.content-wrapper {
+  margin-left: 250px; /* Matches sidebar width */
+  transition: margin-left 0.3s ease-in-out;
+  padding: 20px;
 }
+
+/* Responsive Sidebar Behavior */
+@media screen and (max-width: 1024px) {
+  .main-sidebar {
+    width: 200px;
+  }
+  .content-wrapper {
+    margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main-sidebar {
+    width: 70px;
+  }
+  .content-wrapper {
+    margin-left: 70px;
+  }
+  .main-sidebar .nav-item p { 
+    display: none; /* Hide text on small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main-sidebar {
+    width: 0;
+    overflow: hidden;
+  }
+  .content-wrapper {
+    margin-left: 0;
+  }
+}
+
+/* Sidebar Toggle Button */
+#sidebarToggle {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  z-index: 999;
+}
+
+
 </style>
 <!-- Main Sidebar Container -->
-      <aside class="main-sidebar sidebar-dark-light levation-4 sidebar-no-expand" style="background-color:#b5651d">
+      <aside class="main-sidebar sidebar-dark-light " style="">
         <!-- Brand Logo -->
         <a href="<?php echo base_url ?>admin" class="brand-link bg-transparent text-sm border-info shadow-sm bg-light">
         <img src="<?php echo validate_image($_settings->info('logo'))?>" alt="Store Logo" class="brand-image img-circle elevation-3 bg-black" style="width: 1.8rem;height: 1.8rem;max-height: unset;object-fit:scale-down;object-position:center center">
